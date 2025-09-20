@@ -271,23 +271,23 @@ export function DeviceShowcaseSection() {
             interactive, animated device mockups.
           </p>
         </motion.div>
-        <div className="flex flex-col lg:flex-row gap-16 items-center justify-center">
+  <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center justify-center w-full">
           {/* Laptop Mockup */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full max-w-xl"
+            className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
           >
-            <div className="relative rounded-2xl shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-blue-500/40">
+            <div className="relative rounded-2xl shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-blue-500/40 w-full">
               {/* Laptop Bezel */}
               <div className="bg-black rounded-t-xl p-2 flex items-center justify-between">
                 <span className="text-blue-400 font-bold text-lg pl-4">Ali Umair</span>
                 <Monitor className="h-6 w-6 text-blue-400 mr-4" />
               </div>
               {/* Laptop Nav */}
-              <div className="flex space-x-4 px-6 py-2 bg-gradient-to-r from-blue-900 to-purple-900 rounded-t-lg">
+              <div className="flex flex-wrap gap-2 sm:gap-4 px-2 sm:px-6 py-2 bg-gradient-to-r from-blue-900 to-purple-900 rounded-t-lg justify-center">
                 {laptopTabs.map(tab => (
                   <button
                     key={tab}
@@ -304,13 +304,13 @@ export function DeviceShowcaseSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-b-xl h-72 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400/60 scrollbar-track-transparent"
+                className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-b-xl h-60 sm:h-72 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400/60 scrollbar-track-transparent"
               >
                 {laptopContent[laptopTab]}
               </motion.div>
             </div>
             {/* Laptop Shadow */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-3/4 h-6 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
+            <div className="absolute -bottom-4 sm:-bottom-6 left-1/2 transform -translate-x-1/2 w-2/3 sm:w-3/4 h-4 sm:h-6 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
           </motion.div>
 
           {/* Mobile Mockup */}
@@ -319,9 +319,9 @@ export function DeviceShowcaseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-72"
+            className="relative w-64 sm:w-72 md:w-80"
           >
-            <div className="relative rounded-3xl shadow-2xl bg-gradient-to-br from-white to-blue-100 border-4 border-blue-400/40">
+            <div className="relative rounded-3xl shadow-2xl bg-gradient-to-br from-white to-blue-100 border-4 border-blue-400/40 w-full">
               {/* Mobile Notch */}
               <div className="w-full flex justify-center items-center pt-2 pb-1">
                 <div className="w-16 h-2 bg-gray-300 rounded-full" />
@@ -332,12 +332,12 @@ export function DeviceShowcaseSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-b-3xl h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400/60 scrollbar-track-transparent"
+                className="bg-white rounded-b-3xl h-72 sm:h-80 md:h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400/60 scrollbar-track-transparent"
               >
                 {mobileContent[mobileTab]}
               </motion.div>
               {/* Mobile Nav */}
-              <div className="flex justify-around items-center py-2 bg-gradient-to-r from-blue-100 to-blue-300 rounded-b-3xl border-t border-blue-200">
+              <div className="flex justify-around items-center py-2 bg-gradient-to-r from-blue-100 to-blue-300 rounded-b-3xl border-t border-blue-200 flex-wrap gap-2">
                 {mobileTabs.map(tab => (
                   <button
                     key={tab}
@@ -350,7 +350,7 @@ export function DeviceShowcaseSection() {
               </div>
             </div>
             {/* Mobile Shadow */}
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-2/3 h-4 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
+            <div className="absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-1/2 sm:w-2/3 h-2 sm:h-4 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
           </motion.div>
         </div>
       </div>

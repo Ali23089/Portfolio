@@ -119,24 +119,24 @@ export function ProjectsSection() {
   const otherProjects = projects.filter(project => !project.featured)
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-14 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-14 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Featured Projects</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl sm:max-w-3xl mx-auto">
             Here are some of my recent projects that showcase my skills and experience
             in mobile app development, software engineering, and game development.
           </p>
         </motion.div>
 
         {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 sm:mb-14 md:mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -149,10 +149,10 @@ export function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-44 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Button
                       size="sm"
                       variant="secondary"
@@ -176,11 +176,11 @@ export function ProjectsSection() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                <CardContent className="space-y-3 sm:space-y-4">
+                  <p className="text-sm sm:text-base text-muted-foreground">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="outline" className="text-xs">
                         {tech}
@@ -198,10 +198,10 @@ export function ProjectsSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
-          <h3 className="text-2xl font-bold text-center">Other Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-center">Other Projects</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -214,14 +214,14 @@ export function ProjectsSection() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-36 sm:h-44 md:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg">{project.title}</CardTitle>
+                    <CardTitle className="text-base sm:text-lg">{project.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-3">
-                    <p className="text-muted-foreground text-sm">{project.description}</p>
+                  <CardContent className="space-y-2 sm:space-y-3">
+                    <p className="text-xs sm:text-sm text-muted-foreground">{project.description}</p>
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.slice(0, 3).map((tech) => (
                         <Badge key={tech} variant="outline" className="text-xs">

@@ -33,7 +33,7 @@ export function HeroSection() {
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => {
-          const size = Math.floor(Math.random() * 100) + 50; // Adjusted size range
+          const size = Math.floor(Math.random() * 100) + 50;
           return (
             <motion.div
               key={i}
@@ -43,29 +43,29 @@ export function HeroSection() {
                 height: `${size}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                background: 'radial-gradient(circle, rgba(156,163,175,0.4) 0%, rgba(107,114,128,0.4) 100%)', // Neutral gradient
+                background: 'radial-gradient(circle, rgba(156,163,175,0.4) 0%, rgba(107,114,128,0.4) 100%)',
                 filter: 'blur(1px)',
-                opacity: 0.7, // Slightly reduced opacity for subtle effect
+                opacity: 0.7,
               }}
               animate={{
-                x: [0, Math.random() * 100 - 50], // Horizontal movement
-                y: [0, Math.random() * 100 - 50], // Vertical movement
-                scale: [1, 1.2, 1], // Pulsating effect
-                rotate: [0, 360], // Rotation for added dynamics
+                x: [0, Math.random() * 100 - 50],
+                y: [0, Math.random() * 100 - 50],
+                scale: [1, 1.2, 1],
+                rotate: [0, 360],
               }}
               transition={{
-                duration: Math.random() * 15 + 10, // Smooth and varied duration
+                duration: Math.random() * 15 + 10,
                 repeat: Infinity,
                 repeatType: 'reverse',
                 ease: 'easeInOut',
-                delay: Math.random() * 2, // Staggered start
+                delay: Math.random() * 2,
               }}
             />
           );
         })}
       </div>
-      
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center container-fluid">
+
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center container-fluid">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,34 +77,34 @@ export function HeroSection() {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="relative mx-auto w-40 h-40 md:w-52 md:h-52 flex items-center justify-center"
+            className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 flex items-center justify-center"
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-blue-800 blur-2xl" />
             <img
-               src="/assets/images/dp.jpg"
-              //alt="Ali Umair"
+              src="/assets/images/dp.jpg"
+              alt="Ali Umair"
               className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl"
             />
           </motion.div>
 
           {/* Main heading */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold"
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
                 Ali Umair
               </span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-xl md:text-2xl text-muted-foreground font-medium"
+              className="text-base sm:text-xl md:text-2xl text-muted-foreground font-medium"
             >
               Flutter Developer & Mobile App Enthusiast
             </motion.p>
@@ -113,7 +113,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+              className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
               Computer Science graduate with specialization in Flutter app development. Passionate about creating user-friendly and efficient mobile applications that make a difference in people's lives.
             </motion.p>
@@ -129,17 +129,17 @@ export function HeroSection() {
             <Button
               onClick={handleContactClick}
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
             </Button>
-            
+
             <div className="flex gap-4">
               <Button
                 variant="outline"
                 size="lg"
-                className="px-6 py-6 border-2 hover:bg-accent transition-all duration-300"
+                className="px-4 py-4 sm:px-6 sm:py-6 border-2 hover:bg-accent transition-all duration-300"
                 asChild
               >
                 <a
@@ -150,11 +150,11 @@ export function HeroSection() {
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
-              
+
               <Button
                 variant="outline"
                 size="lg"
-                className="px-6 py-6 border-2 hover:bg-accent transition-all duration-300"
+                className="px-4 py-4 sm:px-6 sm:py-6 border-2 hover:bg-accent transition-all duration-300"
                 asChild
               >
                 <a
@@ -173,7 +173,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
           >
             <Button
               variant="ghost"
